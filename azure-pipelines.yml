@@ -15,12 +15,12 @@ variables:
   buildConfiguration: 'Release'
 
 jobs:
-- job:
-    steps:
+- job: firstjob
+  steps:
     - bash: echo 'first pipeline'
     - bash: echo 'first job'
-- job: 
-    steps:
+- job: secondjob
+  steps:
     - bash: echo 'Second job'
     - task: NuGetToolInstaller@1
 
