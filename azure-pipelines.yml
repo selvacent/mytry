@@ -16,6 +16,4 @@ jobs:
   steps:
     - bash: echo 'first pipeline'
     - bash: echo 'first job'
-- job: secondjob
-  steps:
-    - bash: echo 'Second job'
+
