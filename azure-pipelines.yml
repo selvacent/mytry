@@ -15,9 +15,6 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: CmdLine@2
-  inputs:
-    script: 'echo Hello world'
 
 - task: NuGetToolInstaller@1
 
@@ -55,7 +52,5 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-
-
 
 
