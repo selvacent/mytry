@@ -25,6 +25,7 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/dockerfile'
+        repository: $(imageName)
         tags: |
           $(tag)
     
@@ -33,7 +34,6 @@ stages:
       inputs:
         command: push
         containerRegistry: $(dockerHub)
-        repository: 'appservicesample'
-        dockerfile: '$(Build.SourcesDirectory)/dockerfile'
+        repository: $(imageName)
         tags: |
           $(tag)
