@@ -20,20 +20,25 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
+    
+    - task: Docker@2
+      displayName: Login to Dockerhub
+      inputs:
+        command: login
+        containerRegistry: dockerhub
+    
     - task: Docker@2
       displayName: Build an image
       inputs:
-        command: build
+        command: buildAndPush
         dockerfile: '$(Build.SourcesDirectory)/dockerfile'
-        repository: $(imageName)
+        repository: 'appservicesample'
+        containerRegistry: dockerhub
         tags: |
           $(tag)
     
     - task: Docker@2
-      displayName: Push the image
+      displayName: Logout 
       inputs:
-        command: push
-        containerRegistry: $(dockerhub)
-        repository: $(imageName)
-        tags: |
-          $(tag)
+        command: logout
+        containerRegistry: dockerhub
