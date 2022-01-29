@@ -26,4 +26,4 @@ steps:
     containerRegistry: 'dockerhub'
     repository: 'appservicesample'
     command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: '**/dockerfile'
