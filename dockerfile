@@ -5,10 +5,12 @@ WORKDIR /source
 # copy csproj and restore as distinct layers
 COPY *.sln .
 COPY SampleWebApp/*.csproj ./SampleWebApp/
+COPY UnitTest1/*.csproj ./UnitTest1/
 RUN dotnet restore
 
 # copy everything else and build app
 COPY SampleWebApp/. ./SampleWebApp/
+COPY UnitTest1/. ./UnitTest1/
 WORKDIR /source/SampleWebApp
 RUN dotnet publish -c release -o /app --no-restore
 
