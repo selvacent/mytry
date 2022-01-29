@@ -32,8 +32,8 @@ stages:
       inputs:
         command: buildAndPush
         dockerfile: '$(Build.SourcesDirectory)/dockerfile'
+        containerRegistry: 'dockerhub'
         repository: 'appservicesample'
-        containerRegistry: dockerhub
         tags: |
           $(tag)
     
