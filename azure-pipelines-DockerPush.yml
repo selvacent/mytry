@@ -32,9 +32,8 @@ stages:
       displayName: Push the image
       inputs:
         command: push
-        containerRegistry: |
-            $(dockerHub)
-        repository: $(imageName)
+        containerRegistry: $(dockerHub)
+        repository: 'appservicesample'
         dockerfile: '$(Build.SourcesDirectory)/dockerfile'
         tags: |
           $(tag)
